@@ -70,7 +70,7 @@ class Ability
   end
 
   # Abilities for signed in users
-    def signed_in(user)
+  def signed_in(user)
     # Abilities from not_signed_in user are also inherited
     not_signed_in
 

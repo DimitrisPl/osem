@@ -6,5 +6,4 @@ class OpenidsController < ApplicationController
     @openid.destroy
     redirect_to :back
   end
-
 end
