@@ -70,7 +70,7 @@ class Ability
   end
 
   # Abilities for signed in users
-  def signed_in(user)
+    def signed_in(user)
     # Abilities from not_signed_in user are also inherited
     not_signed_in
 
@@ -99,6 +99,8 @@ class Ability
 
     # can manage the commercials of their own events
     can :manage, Commercial, commercialable_type: 'Event', commercialable_id: user.events.pluck(:id)
+
+    can [ :destroy], Openid
   end
 
   # Abilities for signed in users with roles
