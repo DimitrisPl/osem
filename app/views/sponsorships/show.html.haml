@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Sponsor:
+  = @sponsorship.Sponsor
+%p
+  %b Status:
+  = @sponsorship.status
+%p
+  %b Category:
+  = @sponsorship.category
+%p
+  %b Amount:
+  = @sponsorship.amount
+%p
+  %b Created at:
+  = @sponsorship.created_at
+%p
+  %b Updated at:
+  = @sponsorship.updated_at
+
+= link_to 'Edit', edit_sponsorship_path(@sponsorship)
+\|
+= link_to 'Back', sponsorships_path

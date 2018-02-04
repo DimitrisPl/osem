@@ -1,0 +1,28 @@
+= form_for @sponsorship do |f|
+  - if @sponsorship.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@sponsorship.errors.count, "error")} prohibited this sponsorship from being saved:"
+      %ul
+        - @sponsorship.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :Sponsor
+    = f.text_field :Sponsor
+  .field
+    = f.label :status
+    = f.text_field :status
+  .field
+    = f.label :category
+    = f.number_field :category
+  .field
+    = f.label :amount
+    = f.text_field :amount
+  .field
+    = f.label :created_at
+    = f.datetime_select :created_at
+  .field
+    = f.label :updated_at
+    = f.datetime_select :updated_at
+  .actions
+    = f.submit 'Save'

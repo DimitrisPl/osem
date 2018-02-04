@@ -1,5 +1,6 @@
 Osem::Application.routes.draw do
 
+  resources :sponsorships
   constraints DomainConstraint do
     get '/', to: 'conferences#show'
   end
