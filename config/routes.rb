@@ -1,6 +1,5 @@
 Osem::Application.routes.draw do
 
-  resources :sponsorships
   constraints DomainConstraint do
     get '/', to: 'conferences#show'
   end
@@ -48,6 +47,9 @@ Osem::Application.routes.draw do
       get '/volunteers_list' => 'volunteers#show'
       get '/volunteers' => 'volunteers#index', as: 'volunteers_info'
       patch '/volunteers' => 'volunteers#update', as: 'volunteers_update'
+      resources :sponsorships do
+        get 'admin_conference_sponsorship' => 'sponsorships#show'
+      end
 
       resources :booths do
         member do

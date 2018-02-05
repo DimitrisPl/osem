@@ -113,6 +113,8 @@
         - if !@conference.sponsorship_levels.empty?  && @conference.sponsorship_levels.first.persisted? && (can? :update, @conference.sponsors.build)
           %li{class: active_nav_li(admin_conference_sponsors_path(@conference.short_title))}
             = link_to 'Sponsors', admin_conference_sponsors_path(@conference.short_title)
+        %li
+          = link_to 'Sponsorships', admin_conference_sponsorships_path(@conference.short_title)
         - if can? :update, @conference.tickets.build
           %li{class: active_nav_li(admin_conference_tickets_path(@conference.short_title)) }
             = link_to 'Tickets', admin_conference_tickets_path(@conference.short_title)

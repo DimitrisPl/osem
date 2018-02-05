@@ -2,7 +2,7 @@
 
 %p
   %b Sponsor:
-  = @sponsorship.Sponsor
+  = @sponsorship.Sponsor.name
 %p
   %b Status:
   = @sponsorship.status
@@ -19,6 +19,6 @@
   %b Updated at:
   = @sponsorship.updated_at
 
-= link_to 'Edit', edit_sponsorship_path(@sponsorship)
+= link_to 'Edit', edit_admin_conference_sponsorship_path(@sponsorship)
 \|
-= link_to 'Back', sponsorships_path
+-#= link_to 'Back', sponsorships_path

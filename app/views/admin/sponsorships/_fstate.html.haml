@@ -1,5 +1,3 @@
-%h1 Listing sponsorships
-
 %table
   %tr
     %th Sponsor
@@ -20,10 +18,8 @@
       %td= sponsorship.amount
       %td= sponsorship.created_at
       %td= sponsorship.updated_at
-      %td= link_to 'Show', sponsorship
-      %td= link_to 'Edit', edit_sponsorship_path(sponsorship)
-      %td= link_to 'Destroy', sponsorship, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      -# %td= link_to 'Show', admin_conference_sponsorship_path(sponsorship)
+      -# %td= link_to 'Edit', edit_admin_conference_sponsorship_path(sponsorship)
+      -# %td= link_to 'Destroy', sponsorship, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Sponsorship', new_sponsorship_path
