@@ -1,25 +1,22 @@
-%table
-  %tr
-    %th Sponsor
-    %th Status
-    %th Category
-    %th Amount
-    %th Created at
-    %th Updated at
-    %th
-    %th
-    %th
+%p 1st
 
-  - @sponsorships.each do |sponsorship|
-    %tr
-      %td= sponsorship.Sponsor.name
-      %td= sponsorship.status
-      %td= sponsorship.category
-      %td= sponsorship.amount
-      %td= sponsorship.created_at
-      %td= sponsorship.updated_at
-      -# %td= link_to 'Show', admin_conference_sponsorship_path(sponsorship)
-      -# %td= link_to 'Edit', edit_admin_conference_sponsorship_path(sponsorship)
-      -# %td= link_to 'Destroy', sponsorship, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%div
+  %table.table
+    %thead
+      %tr
+        %td
+          %div.row
+            %div.col-md-3 Sponsor
+            %div.col-md-3 Status
+            %div.col-md-3 Amount
+            %div.col-md-3 Agreed
 
-%br
+    %tbody
+      -@sponsorships.each do |sponsorship|
+        %tr
+          %td
+            %div.row
+              %div.col-md-3= sponsorship.Sponsor.name
+              %div.col-md-3= sponsorship.status
+              %div.col-md-3= sponsorship.amount
+              %check_box_tag.switch-checkbox

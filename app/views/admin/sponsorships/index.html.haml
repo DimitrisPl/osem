@@ -1,15 +1,25 @@
 %h1 Listing sponsorships
 
+-# state has to change accoring to the date
+-# state 1 is at negotiation time, 2 at managing, 3 see what left
 - state = 1
 
 %ul.nav.nav-tabs.nav-justified
-  %li.active
-    %a Contacted Sponsors
-  %li
-    %a Sponsoriships State
-  %li
-    %a Logging
+  %li{class: state == 1 ? "active" : ""}
+    %a{href: "#state1", "data-toggle"=> "tab"}
+      Contacted Sponsors
+  %li{class: state == 2 ? "active" : ""}
+    %a{href: "#state2", "data-toggle"=> "tab"}
+      Sponsoriships State
+  %li{class: state == 3 ? "active" : ""}
+    %a{href: "#state3", "data-toggle"=> "tab"} Logging
 
-
+%div.tab-content
+  %div{class: "tab-pane fade #{state == 1 ? "active in" : ''}", id: "state1"}
+    = render 'fstate'
+  %div{class: "tab-pane fade #{state == 2 ? "active in" : ''}", id: "state2"}
+    = render 'sstate'
+  %div{class: "tab-pane fade #{state == 3 ? "active in" : ''} ", id: "state3"}
+    = render 'tstate'
 
 = link_to 'New Sponsorship', new_admin_conference_sponsorship_path

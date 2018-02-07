@@ -1,0 +1,32 @@
+%p 2nd
+%div
+  %table.table.table-hover
+    %thead
+      %tr
+        %td
+          %div.row
+            %div.col-md-3 Sponsor
+            %div.col-md-3 Status
+            %div.col-md-3 Completed
+            %div.col-md-3 Personal Notes
+
+    %tbody
+      - sponsor_count = 0
+      -@sponsorships.each do |sponsorship|
+        - sponsor_count += 1
+        %tr
+          %td
+            %div{class: "row", "data-toggle"=>"collapse", "data-target"=>"#sponsorship_#{sponsor_count}"}
+              %div.col-md-3= sponsorship.Sponsor.name
+              %div.col-md-3  paid
+              %div.col-md-3  No
+              %div.col-md-3  No
+            %div{class: "row collapse", id: "sponsorship_#{sponsor_count}"}
+              %br
+              %div.col-md-12
+                %div.row
+                  %div.col-md-12
+                    %p Here will be presented info for every box
+                %div.row
+                  %div.col-md-12
+                    %p Here will be presented info for every box
